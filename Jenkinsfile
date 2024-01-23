@@ -8,7 +8,7 @@ pipeline {
         APP_NAME = "Hypha CICD"
         RELEASE = "1.0.0"
         DOCKER_USER = "fredritchie"
-        DOCKER_PASS = 'docker'
+        DOCKER_PASS = "megathoodham"
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
