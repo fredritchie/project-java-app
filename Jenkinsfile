@@ -20,7 +20,7 @@ pipeline {
         }
         stage("Checkout from SCM"){
             steps {
-                git branch: 'master', credentialsId: 'github', url: 'https://github.com/fredritchie/hypha-k8s-project-jenkins-server'
+                git branch: 'master', credentialsId: 'github', url: 'https://github.com/dmancloud/complete-prodcution-e2e-pipeline'
             }
         }
         stage("Build Application"){
