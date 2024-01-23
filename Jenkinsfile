@@ -20,7 +20,7 @@ pipeline {
         }
         stage("Checkout from SCM"){
             steps {
-                git branch: 'master', credentialsId: 'github', url: 'https://github.com/fredritchie/project-java-app'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/fredritchie/project-java-app'
             }
         }
         stage("Build Application"){
