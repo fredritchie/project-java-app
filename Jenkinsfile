@@ -35,27 +35,13 @@ pipeline {
                 sh "mvn test"
             }
         }
-        stage("Build & Push Docker Image") {
-            steps {
-                script {
-                    docker.withRegistry('',DOCKER_PASS) {
-                        docker_image = docker.build "fredritchie/java"
-                    }
-
-                    docker.withRegistry('',DOCKER_PASS) {
-                        docker_image.push("${IMAGE_TAG}")
-                        docker_image.push('latest')
-                    }
-                }
-            }
-        }
-        stages {
         stage("Create an EKS Cluster") {
             steps {
                 script {
                     dir('terraform') {
                         sh "terraform init"
                         sh "terraform apply --auto-approve"
+                    
                     }
                 }
             }
