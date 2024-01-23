@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java
+spec:
+  selector:
+    matchLabels:
+      app: java
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: java
+    spec:
+      containers:
+      - name: fredritchie/java
+        image: java
+        ports:
+        - containerPort: 80
